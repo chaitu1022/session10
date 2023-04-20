@@ -1,0 +1,12 @@
+<div class="container" >
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="card" *ngFor="let employee of employees" style="margin: 15px;" >
+            <div class="card-header">
+              {{employee.name}}
+            </div>
+            <div class="card-body">
+               {{employee.email}}
+            </div>
+          </div>
+    </div>
+</div>

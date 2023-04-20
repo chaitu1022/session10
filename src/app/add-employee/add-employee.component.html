@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Add Employee</h3>
+                <div class="container">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <form #submitemployee="ngForm" (ngSubmit)="AddEmployee(submitemployee)" >
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" required class="form-control" id="name" #empName="ngModel" ngModel name="name" >
+                                <div style="color: red;" *ngIf="empName.touched && empName.errors !=null && empName.errors?.['required']"
+                                    >
+                                    Name is required.
+                                </div>
+                                <!-- <div>touched: {{empName.touched}}</div>
+                                <div>untouched: {{empName.untouched}}</div>
+                                <div>pristine: {{empName.pristine}}</div>
+                                <div>dirty: {{empName.dirty}}</div>
+                                <div>valid: {{empName.valid}}</div>
+                                <div>invalid: {{empName.invalid}}</div> -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" required email class="form-control" id="email" #empEmail="ngModel" ngModel name="email">
+                                <div style="color: red;" *ngIf="empEmail.touched && empEmail.errors !=null && empEmail.errors?.['required']"
+                                >
+                                Email is required. 
+                                
+                            </div>
+                            <div style="color: red;" *ngIf="empEmail.touched && empEmail.errors !=null && empEmail.errors?.['email']"
+                            >
+                            Please enter valid email
+                            
+                        </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ submitemployee.value | json }}
+    </div>
+</div>
+
